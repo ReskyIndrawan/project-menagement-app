@@ -1,0 +1,53 @@
+Application description.
+
+this application using for see progress of project we made, for easily coordination to another team member.
+
+this application using the latest technology:
+
+Frontend = using next.js
+backend = using node.js
+database = potgresql
+deploy = using AWS technology like VPC, EC2, RDS, Amplify, Incognito, S3
+
+node.js packages :
+@mui/material
+@mui/x-data-grid
+@emotion/react
+@emotion/styled
+lucide-react
+numeral
+date-fns
+recharts
+axios
+react-dnd
+react-dnd-hmtl5-backend
+gantt-task-react
+react-redux
+@reactjs/toolkit
+redux-persist
+dotenv
+
+node.js dependencies :
+@types/node
+@types/uuid
+@types/numeral
+prettier
+prettier-plugin-tailwindcss
+tailwind-merge
+
+work flow :
+1.delete all not using element in page.tsx
+2.delete all css code in global.css except tailwind property at the top, after that you can reset with new settings according to your wishes
+3.make new file in root client folder with name .prettierrc
+4.settings dark mode and color in  tailwind.config file
+5.make new file with name DashboardWrapper.tsx in src app directory
+6.after you make DashboardWrapper and now wrap the layout.tsx with dashboarwrapper
+7.move to make navbar now in new directory with name (components), in (components) directory make new file with name Navbar.tsx
+8.after we finish a little bit in a Navbar we can move to make Sidebar components in the same directory and starting to developing a sidebar
+9.before we continue to developing the sidebar link we must settings redux toolkit for menage we own state menagement
+10.the first make it file redux.tsx in app directory for fill it a boilertamplate
+11.after boiler tamplate is ready we make new directory again with name state in root client directory and inside there we make file with name index.ts for fill a global state menagement
+12.before we make redux for query to detabase we must prepare in local env in root of client directory
+13.after make it we can back to state diractory to make a new file we can call it api.ts
+14.after that, we must little modification again for DashboardWrapper.
+

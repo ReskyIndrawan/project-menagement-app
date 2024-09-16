@@ -1,0 +1,58 @@
+Application description.
+
+
+
+node.js packages :
+// this packages for database
+prisma
+@prisma/client
+
+//This packages for backend
+express //uses for make some web or build API
+body-parser //used to parse the body of an HTTP request and make it accessible as the req.body property
+cors //this is a middleware we use for allow cross-domain access from different clients.
+dotenv //allows to create data variable in node.js enviroment
+helmet // this is security middleware to help protection our express application or API by setting various security-related HTTP headers
+morgan // Logs incoming HTTP requests to the server (e.g., method, URL, status, response time), which is very helpful for debugging and monitoring server activity.
+
+
+
+
+node.js dependencies :
+ts-node
+typescript
+@types/node
+rimraf // using for delate file dist before we build an app;ication
+concurrently // using for do multiple command in one terminal
+nodemon
+@types/express
+@types/morgan
+@types/cors
+
+workflow :
+1. first, we can start from instal some dependencies
+2. after that we can run npx tsc --init for triger new file tsconfig.json
+3. and the important things for this tsconfig is little bit modified in settings like :
+    module = nodenext
+    moduleResolution = nodenext
+    resolveJsonModule = true
+    outDir = ./dist
+    and the last the end of code make it a new property and give it name 
+    "include": ["src/**/*", "src/data/**/*.json", "prisma/**/*"]
+4. after do much something change in tsconfig we can move to install prisma and prisma client
+5. and write npx prisma init in terminal for triger a new prisma folder in server directory
+6. prepare for dummy data with folder name seedData where i put on prisma directory
+7. and make it file seed.ts in prisma directory. that file containing a some function for replaced existing file with dummy file we have prepare before
+8. now you can write own detabase model in shema.prisma
+9. after all go to packages.json for writing some code in script like "seed": "ts-node prisma/seed.ts"
+10. go  next folder with name .env and you can setting with your database config address, you can get in pgadmin4
+11. until this part we can ready now todo database migrate
+12. first we open terminal and write npx prisma generate => npx prisma migrate dev --name init => npm run seed
+13. if you get some error after run npm run seed command, you must be bugging youre code and before do above step again the first you write npx prisma migrate reset in terminal.
+14. install some packages for support you develop backend
+15. make a new directory call it controllers in this directory make new file with name projectController.ts
+16. in this file we can make a lot logic for our API
+17. after make some logic to take project from database we move to make routes
+18. move to make a new directory in src folder with name routes and in routes folder make a new file with name projectRoute.ts
+19. after we finish in project controller we move to taks controller
+20. the first we make a new file with name taskController.ts in controller folder
